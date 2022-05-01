@@ -5,23 +5,33 @@ export const mapSlice = createSlice({
   initialState: {
     refrence: null,
     locations: [ {
-      name:'masjed-meyssam',
-      latlng:[],
-      users:[],
-      status:'active',
+      name:'test',
+      latlng: {lat:35.715298,lng: 51.404343} ,
+      description:'inja kojast chibe chiye',
+      users:[
+        {
+          id:14587,
+          name:'ali',
+          communicatorsNubmers:100,
+          eventsNumbers:120,
+          postsNumbers:0,
+          status:'online'
+        }
+      ],
     }],
+   
   },
   reducers: {
     setRefrence: (state, action) => {
       state.refrence = action.payload
     },
     setLocation: (state, action) => {
-      state.refrence += action.payload
+      state.locations = [...state.locations,action.payload] 
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setRefrence } = mapSlice.actions
+export const { setRefrence,setLocation } = mapSlice.actions
 
 export default mapSlice.reducer

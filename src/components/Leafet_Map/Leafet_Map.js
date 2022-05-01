@@ -42,6 +42,7 @@ const Leafet_Map = ({ children, className, ...rest }) => {
     <MapContainer className={mapClassName}     whenCreated={ mapInstance => {mapRef.current = mapInstance } } {...rest} >
       <MapConsumer>
         {(map) => children(ReactLeaflet, map)}
+        
       </MapConsumer>
     </MapContainer>
   )

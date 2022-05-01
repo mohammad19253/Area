@@ -1,0 +1,44 @@
+@import './colors.scss';
+.banner-image{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-container{
+    margin:10px 100px ;
+    .profile-img-2x{
+        width: 5rem;
+        height: 5rem;
+        border-radius:4rem ;
+        margin: 5px;
+    }
+    .types{
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        div{
+            transition: all 0.1s;
+            padding:10px;
+            border-top: 1px solid  $primariy-white-25;
+        }
+        div:hover{
+            border-top: 1px solid  $primariy-white-75;
+            color: $primariy-white-75;
+        }
+        .seleceted{
+            border-top: 1px solid $primariy-black-75 !important;
+            color: $primariy-black-75 !important;
+        }
+      
+    }
+ 
+    .banner-post{
+        width: 250px;
+        img{
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@import './colors.scss';
+.otp-input{
+    justify-content:center;
+    input{
+        width: 3rem !important;
+        height: 4rem;
+        border: 1px solid $primariy-white-25 ;
+        border-radius: 5px;
+        margin: 2px;
+        color: $primariy-white-25;
+    }
+}
