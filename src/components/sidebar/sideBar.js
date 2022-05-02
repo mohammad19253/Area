@@ -15,7 +15,7 @@ import {
 import { HiDotsVertical } from "react-icons/hi";
 import { FaList, FaRegHeart, FaUserFriends ,FaRegComment} from "react-icons/fa";
 import { FiLogOut, FiArrowLeftCircle, FiMapPin, } from "react-icons/fi";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard , MdExplore  } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { RiPencilLine } from "react-icons/ri";
@@ -49,7 +49,7 @@ const SideBar = () =>{
                     <MenuItem active={true} icon={<MdDashboard />}>
                         <Link href={'/dashboard'}>Dashboard</Link>
                     </MenuItem>
-                    <MenuItem icon={<FaList />}>Category</MenuItem>
+                    <MenuItem icon={<MdExplore />}>Explore</MenuItem>
                     <MenuItem icon={<FaUserFriends/>}>Friends</MenuItem>
                     <MenuItem icon={<FiMapPin/>}>   <Link href={'/map'}>Map</Link></MenuItem>
                     <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>

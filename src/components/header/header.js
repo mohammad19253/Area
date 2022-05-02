@@ -5,12 +5,8 @@ import { useSelector } from "react-redux";
 const Header = () =>{
     const user = useSelector(state=>state.user)
     const userStatus = useSelector(state=>state.authorization.status)
-   
     const [formModal,setFormModal]=useState(false)
     const  handleCloseModal = () =>{    formModal ? setFormModal(false) : setFormModal(true)  }
-    useEffect (()=>{
-        console.log(user)
-    },[user])
     return (
         <div className="header-container">
             <Navbar collapseOnSelect  className="bg-light  text-light p-0">
@@ -38,7 +34,7 @@ const Header = () =>{
                         <Nav>
                             <Nav.Link href="/dashboard" className="text-center d-flex" >
                                 <div className="d-flex align-items-center fs-6 mx-2 " >{user.userName}</div>
-                                <img src={user.profile_picture.src} className="profile-img"/>
+                                <img src={user.profile_picture.src} className="profile-img-1x"/>
                             </Nav.Link>
                         </Nav>
                         :

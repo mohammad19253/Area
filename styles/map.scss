@@ -1,0 +1,25 @@
+.locations-images{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:250px;
+    
+    img{
+        margin:5px;
+        width:250px;
+        height : 250px;
+        object-fit: cover;
+    
+    }
+}
+.location-details-popup{
+    min-width: 200px;
+}
+.leaflet-popup-content{
+    width: auto !important;
+}
+.profile-img-1x{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius:4rem ;
+    margin: 5px;
+}

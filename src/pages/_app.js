@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import Header from '../components/header/header';
 import { ToastContainer } from 'react-toastify';
 import SideBar from '../components/sideBar/sideBar';
+
 function MyApp({ Component, pageProps }) {
   return (
       <Provider store={store}>
