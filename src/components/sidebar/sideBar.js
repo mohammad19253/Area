@@ -21,13 +21,17 @@ import { CgProfile } from "react-icons/cg";
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 
+
+import { setToken, setStatus } from "../../redux/features/athurization/authorizationSlice";
+import { useDispatch } from 'react-redux'
 const SideBar = () =>{
-    
+    const distpach = useDispatch()
     const userStatus = useSelector(state=>state.authorization.status)
     const [menuCollapse, setMenuCollapse] = useState(false)
     const [settingIcon,setSettingIcon]=useState(false)
 
     useEffect (()=>{ if( window.matchMedia('(max-width:1000px)').matches) setMenuCollapse(true)} ,[])
+    console.log(userStatus)
     if (userStatus === 'sign-in'){
         return (
             <div className="custome-sidebar-container">  
@@ -69,7 +73,10 @@ const SideBar = () =>{
                 </SidebarContent>
                 <SidebarFooter>
                     <Menu iconShape="square">
-                    <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                    <MenuItem icon={<FiLogOut />}onClick={()=>{
+                            distpach(setToken(null))
+                            distpach(setStatus('none'))
+                    }}>Logout</MenuItem>
                     </Menu>
                 </SidebarFooter>
             </ProSidebar>

@@ -7,9 +7,7 @@ const Profile = (props) => {
     },[props])
   
     const [description_load_more,set_description_load_more]=useState({key:'',state:false})
-    const loadMoreDescription = () =>{
-
-    }
+   
     if(user){
         return  <div className="profile w-100 text-light-75">
         <div className="">

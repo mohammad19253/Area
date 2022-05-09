@@ -1,0 +1,156 @@
+@import './colors.scss';
+
+.slideShow-container{
+    position: relative;
+    height: auto;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    
+    .box-container{
+        position: absolute;
+        padding: 10px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        .box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .left-arrow,.right-arrow{
+                transition: all 1s;
+                border: 1.5px solid transparent;
+                cursor: pointer;
+                background-color: white;
+                border-radius: 100%;
+                height: fit-content;
+                padding: 5px;
+                padding-left: 3px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            .left-arrow:hover,.right-arrow:hover{
+              border: 1.5px solid gray;
+            }
+            //      background-color: white;
+           
+            .right-arrow{
+                transform: rotate(180deg);
+            }
+        }
+        .cards-container{
+            width: 550px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;           
+            &::-webkit-scrollbar{
+                width:0 ;
+            }
+            .card{
+                    transition: all 1s;
+                    font-size: 14px;
+                    margin: 10px;
+                    overflow: hidden;
+                    border:none;
+                    border-radius: 5%;
+                    position: relative;
+                    width:95% ;
+                    min-width:95% ;
+                    height: 450px;
+                    color: rgb(97, 97, 97);
+                .card-image{
+                    border-radius: 5%  5%  0%  0%;
+                    width: 100%;
+                    height:70%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                .card-text{
+                    padding:10px;
+                    width: 75%;
+                    max-height: 50%;
+                    overflow: scroll;
+                    div{
+                        padding: 10px;
+                    }
+                }
+                .card-title{
+                    font-size: 15px;
+                    font-weight:500;
+                    width: 85px;
+                    height:85px;
+                    border-radius: 100%;
+                    div{
+                        width: 90%;
+                        height: 90%;
+                        padding: 5px;
+                        border-radius: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    vertical-align: middle;
+                    background-color: white;
+                    position: absolute;
+                    right: 2%;
+                    bottom:15%;
+                }
+            }
+        }
+    }
+    .background-blur-slideshow{
+        position: absolute;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height:100%;
+        &::-webkit-scrollbar{
+            width: 0px;
+            background: transparent;
+        }
+        .slideShow-slide-image{
+            width: 100vw;
+            height:100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(2.5rem);
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: blur(7px); /* apply the blur */
+                    /* backdrop-filter: blur(2.5rem);
+                pointer-events: none; /* make the overlay click-through */
+              }
+        }
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .cards-container{
+        width: 100% !important;
+    }
+   .card{
+        min-width: 90% !important;
+        height: 350px !important;
+   }
+  }
+  

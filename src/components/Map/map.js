@@ -4,17 +4,19 @@ import Leafet_Map from '../Leafet_Map/index';
 const DEFAULT_CENTER = [35.715298, 51.404343] //tehran
 import { useSelector } from "react-redux";
 import Select from 'react-select';
+import { useRouter } from 'next/router';
 export default function Map() {
+  const router =  useRouter()
   const locations = useSelector((state) => state.map.locations)
   const [selectedOption, setSelectedOption] = useState(null);
   const locationsOptions = (marker) => {
     return marker.members.map(user =>{
       return {
-        value:user.name,
+        value:user.userName,
         label:
               <>
               <img  src={user.profile_picture.src} className='profile-img-1x'/>
-              {user.name}
+              {user.userName}
               </>
         }
     })
@@ -47,7 +49,11 @@ export default function Map() {
                                         <div>
                                           <Select
                                               placeholder='search user'
-                                              onChange={setSelectedOption}
+                                              onChange={(e)=>{
+                                                setSelectedOption(e)
+                                                router.push(`/ur/${e.value}`)
+                                              }}
+                                              value={selectedOption}
                                               options={locationsOptions(marker)}
                                             />
                                         </div>

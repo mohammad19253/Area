@@ -18,11 +18,14 @@ export const authorizationSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload
     },
+    setStatus: (state, action) => {
+      state.status = action.payload
+    },
   
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {  setToken, setStep , setPhoneNumber } = authorizationSlice.actions
+export const {  setToken, setStep , setPhoneNumber , setStatus } = authorizationSlice.actions
 
 export default authorizationSlice.reducer

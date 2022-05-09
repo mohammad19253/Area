@@ -9,7 +9,7 @@ const Header = () =>{
     const  handleCloseModal = () =>{    formModal ? setFormModal(false) : setFormModal(true)  }
     return (
         <div className="header-container">
-            <Navbar collapseOnSelect  className="bg-light  text-light p-0">
+            <Navbar collapseOnSelect  className="bg-light  text-light">
                 <Container>
                 <Navbar.Brand href="#home">Challenge</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -24,7 +24,7 @@ const Header = () =>{
                         <NavDropdown.Item href="#action/3.3">about</NavDropdown.Item>
                     </NavDropdown>
                     </Nav>
-                    {userStatus === 'unknown' ?
+                    {userStatus === 'none' ?
                         <Nav>
                             <Nav.Link href="/#authorization" className=" rounded text-center " onClick={handleCloseModal}>Sign in / Sign up </Nav.Link>
                             <Sign_In_Sign_Up show={formModal} set_modal={(e)=>setFormModal(e)}/>

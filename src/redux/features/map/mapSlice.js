@@ -22,7 +22,7 @@ export const mapSlice = createSlice({
       members:[
         {
           id:14587,
-          name:'ali',
+          userName:'ali',
           profile_picture:profile_picture,
           communicatorsNubmers:100,
           eventsNumbers:120,

@@ -1,8 +1,12 @@
 import { configureStore,getDefaultMiddleware,combineReducers  } from '@reduxjs/toolkit'
+
 import authorizationReducer from '../features/athurization/authorizationSlice'
 import mapReducer from '../features/map/mapSlice'
 import UserReducer from '../features/User/user'
+
+
 import {
+  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
@@ -13,12 +17,9 @@ import {
 } from 'redux-persist'
 
 import storage from 'redux-persist/lib/storage' 
-
-
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['spinner', 'navigation', 'doc', 'report']
 };
 
 const reducers = combineReducers({
